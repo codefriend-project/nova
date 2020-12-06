@@ -1,0 +1,1004 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+& when (@media-common = true) {
+    .customer-account-login{
+        .page-wrapper{
+            .page-main{
+                .columns{
+                    .column{
+                        &.main{
+                            .login-container{
+                                .flexbox();
+                                .flex-wrap(wrap);
+                                .block{
+                                    &.block-customer-login{
+                                        margin-bottom: 0;
+                                        .block-content{
+                                            .form-login{
+                                                .fieldset{
+                                                    .field{
+                                                        .control{
+                                                            width: 100%;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .social-login-authentication-channel{
+                                .block-content{
+                                    .flexbox();
+                                    .flex-direction(column);
+                                    .flex-align-items(center);
+                                    .actions-toolbar{
+                                        width: 100%;
+                                        margin-bottom: 10px;
+                                        &:first-child{
+                                            margin-top: 0;
+                                        }
+                                        .btn-social{
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customer-account-forgotpassword{
+        .page-wrapper{
+            .page-main{
+                .columns{
+                    .column{
+                        &.main{
+                            .form{
+                                &.password{
+                                    &.forget{
+                                        .actions-toolbar{
+                                            .secondary{
+                                                float: right;
+                                                .action{
+                                                    &.back{
+                                                        display: block;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customer-account-create{
+        .page-wrapper{
+            .page-main{
+                .columns{
+                    .column{
+                        &.main{
+                            .flexbox();
+                            .form-create-account{
+                                .actions-toolbar{
+                                    .secondary{
+                                        float: right;
+                                        .action{
+                                            &.back{
+                                                display: block;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .social-login-authentication-channel{
+                                .block-content{
+                                    .flexbox();
+                                    .flex-direction(column);
+                                    .flex-align-items(center);
+                                    .actions-toolbar{
+                                        width: 100%;
+                                        margin-bottom: 10px;
+                                        &:first-child{
+                                            margin-top: 0;
+                                        }
+                                        .btn-social{
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .account{
+        &.page-layout-2columns-left{
+            .page-wrapper{
+                .page-main{
+                    .columns{
+                        .sidebar-main{
+                            .block-collapsible-nav{
+                                .block-collapsible-nav-title{
+                                    border-color: @color-cloud;
+                                }
+                                .content{
+                                    background: @color-cloud;
+                                    .nav{
+                                        &.items{
+                                            strong , a{
+                                                color: @white;
+                                            }
+                                            a{
+                                                &:hover{
+                                                    background: @color-cloud;
+                                                }
+                                            }
+                                            .nav{
+                                                &.item{
+                                                    &.current{
+                                                        strong{
+                                                            border-color: @white;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .column{
+                            &.main{
+                                .table-wrapper{
+                                    .table{
+                                        tbody{
+                                            td{
+                                                &.actions{
+                                                    .flexbox();
+                                                    /* .flex-direction(column); */ /* KLAUDIO */
+                                                    .action{
+                                                        margin-right: 10px;
+                                                        &:after{
+                                                            display: none;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Account Dashboard Pages */
+    .customer-account-index{
+        .page-main{
+            .columns{
+                .column{
+                    &.main{
+                        .block{
+                            margin-bottom: 30px;
+                            padding-bottom: 20px;
+                            &.block-dashboard-info,
+                            &.block-dashboard-addresses{
+                                border-bottom: 1px solid @color-cloud;
+                                .block-title{
+                                    margin-bottom: 5px;
+                                }
+                            }
+                            &.block-dashboard-orders{
+                                .block-title{
+                                    margin-bottom: 30px;
+                                }
+                            }
+                            .box-content{
+                                margin-bottom: 15px;
+                            }
+                            .table-wrapper{
+                                border-color: @color-cloud;
+                                .table{
+                                    tbody{
+                                        tr{
+                                            td{
+                                                border-color: @color-cloud;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .customer-address-form{
+        .page-main{
+            .columns{
+                .column{
+                    &.main{
+                        .form-address-edit{
+                            .actions-toolbar{
+                                .primary{
+                                    .action{
+                                        &.save{
+                                            &.primary{
+                                                padding: 8px 15px;
+                                                line-height: 16px;
+                                                font-size: 14px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sales-order-history{
+        .page-main{
+            .columns{
+                .column{
+                    &.main{
+                        .table-wrapper{
+                            border-color: @color-cloud;
+                            .table{
+                                tbody{
+                                    tr{
+                                        td{
+                                            border-color: @color-cloud;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .order-products-toolbar{
+                            .flexbox();
+                            .flex-justify(center);
+                            margin-top: 30px;
+                            #limiter{
+                                background-color: @white;
+                                border-radius: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customer-address-index{
+        .page-main{
+            .columns{
+                .column{
+                    &.main{
+                        .block{
+                            margin-bottom: 30px;
+                            padding-bottom: 20px;
+                            border-bottom: 1px solid @color-cloud;
+                            .block-title{
+                                margin-bottom: 5px;
+                            }
+                            .box-content{
+                                margin-bottom: 15px;
+                            }
+                            &.block-addresses-list{
+                                padding: 0;
+                                .block-content{
+                                    .customer-addresses-toolbar{
+                                        display: none;
+                                    }
+                                }
+                                .table-wrapper{
+                                    border: none;
+                                    .table{
+                                        tbody{
+                                            tr{
+                                                td{
+                                                    border-color: @color-cloud;
+                                                }
+                                            }
+                                        }
+                                        thead{
+                                            tr{
+                                                th{
+                                                    border-color: @color-cloud;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customer-account-edit{
+        .page-main{
+            .columns{
+                .column{
+                    &.main{
+                        .form-edit-account{
+                            .field{
+                                &.password-info{
+                                    margin-bottom: 40px;
+                                }
+                            }
+                        }
+                        .mp-gdpr-delete-customer-account{
+                            padding: 0;
+                            .gdpr-delete-message{
+                                padding: 0;
+                            }
+                            .actions-toolbar{
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .customer-account-login{
+        .page-wrapper{
+            .page-main{
+                .columns{
+                    .column{
+                        &.main{
+                            .login-container{
+                                .block{
+                                    &.block-customer-login{
+                                        .flex-order(1);
+                                        width: 48%;
+                                        margin-right: auto;
+                                        .block-content{
+                                            .form-login{
+                                                .fieldset{
+                                                    .actions-toolbar{
+                                                        .flexbox();
+                                                        .flex-align-items(center);
+                                                        .secondary{
+                                                            margin-left: auto !important;
+                                                            margin: 0;
+                                                            .action{
+                                                                &.remind{
+                                                                    margin: 0;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.block-new-customer{
+                                        .flex-order(3);
+                                        width: 48%;
+                                        margin-right: auto;
+                                    }
+                                    &.social-login-authentication-channel{
+                                        width: 48%;
+                                        margin-left: auto;
+                                        .flex-order(2);
+                                    }
+                                    &.guest-order{
+                                        width: 48%;
+                                        margin-left: auto;
+                                        .flex-order(4);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customer-account-create{
+        .page-wrapper{
+            .page-main{
+                .columns{
+                    .column{
+                        &.main{
+                            .flex-direction(row-reverse);
+                            .form-create-account,
+                            .social-login-authentication-channel{
+                                min-width: 0;
+                                width: 46%;
+                            }
+                            .social-login-authentication-channel{
+                                margin: 0 0 0 auto;
+                            }
+                            .form-create-account{
+                                margin: 0 auto 0 0;
+                                .actions-toolbar{
+                                    .flexbox();
+                                    .flex-align-items(center);
+                                    .secondary{
+                                        margin-top: 0;
+                                        margin-left: auto !important;
+                                        .action{
+                                            &.back{
+                                                margin: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customer-account-index{
+        .page-main{
+            .columns{
+                .column{
+                    &.main{
+                        .block{
+                            &.block-dashboard-info,
+                            &.block-dashboard-addresses,
+                            &.block-dashboard-orders{
+                                .block-title{
+                                    .action{
+                                        float: right;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .customer-address-index{
+        .page-main{
+            .columns{
+                .column{
+                    &.main{
+                        .table-wrapper{
+                            &.additional-addresses{
+                                table{
+                                    tbody{
+                                        tr{
+                                            .col{
+                                                &.actions{
+                                                    .flex-direction(column);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .customer-account-login{
+        .page-wrapper{
+            .page-main{
+                .columns{
+                    .column{
+                        &.main{
+                            .login-container{                                
+                                .block{
+                                    &.block-customer-login{
+                                        .flex-order(2);
+                                        width: 100%;
+                                        .block-content{
+                                            .form-login{
+                                                .fieldset{
+                                                    .actions-toolbar{
+                                                        .flexbox();
+                                                        .flex-direction(column);
+                                                        .primary{
+                                                            .action{
+                                                                width: 100%;
+                                                            }
+                                                        }
+                                                        .secondary{
+                                                            .action{
+                                                                margin: 0;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.block-new-customer{
+                                        width: 100%;
+                                        .flex-order(4);
+                                        .block-content{
+                                            .actions-toolbar{
+                                                .primary{
+                                                    width: 100%;
+                                                    .action{
+                                                        margin: 0;
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.social-login-authentication-channel{
+                                        width: 100%;
+                                        .flex-order(1);
+                                    }
+                                    &.guest-order{
+                                        width: 100%;
+                                        .flex-order(3);
+                                        .primary{
+                                            width: 100%;
+                                            .action{
+                                                margin: 0;
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customer-account-forgotpassword{
+        .page-wrapper{
+            .page-main{
+                .columns{
+                    .column{
+                        &.main{
+                            .form{
+                                &.password{
+                                    &.forget{
+                                        width: 100%;
+                                        .actions-toolbar{
+                                            .primary{
+                                                width: 100%;
+                                                margin-bottom: 15px;
+                                                .action{
+                                                    margin: 0;
+                                                    width: 100%;
+                                                }
+                                            }
+                                            .secondary{
+                                                width: 100%;
+                                                .action{
+                                                    &.back{
+                                                        margin: 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customer-account-create{
+        .page-wrapper{
+            .page-main{
+                .columns{
+                    .column{
+                        &.main{
+                            .flex-direction(column);
+                            .form-create-account{
+                                width: 100%;
+                                .actions-toolbar{
+                                    .primary{
+                                        width: 100%;
+                                        margin-bottom: 15px;
+                                        .action{
+                                            margin: 0;
+                                            width: 100%;
+                                        }
+                                    }
+                                    .secondary{
+                                        width: 100%;
+                                        .action{
+                                            &.back{
+                                                margin: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .social-login-authentication-channel{
+                                .block-content{
+                                    .actions-toolbar{
+                                        width: 100%;
+                                        margin-bottom: 10px;
+                                        .btn-social{
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .account{
+        &.page-layout-2columns-left{
+            .page-wrapper{
+                .page-main{
+                    .columns{
+                        .flexbox();
+                        .flex-direction(column-reverse);
+                        .sidebar-main{
+                            width: 100%;
+                            margin-bottom: 20px;
+                            .flex-order(2);
+                            padding: 0;
+                           .block-collapsible-nav{
+                               position: relative;
+                               margin: 0;
+                               top: 0;
+                               .block-collapsible-nav-title{
+                                    padding-left: 0;
+                                    height: auto;
+                                    width: 100%;
+                                    overflow: visible;
+                                    display: block;
+                                    position: relative;
+                                    border-bottom: @border-width__base solid @border-color__base;
+                                    border-top: @border-width__base solid @border-color__base;
+                                    cursor: pointer;
+                                    margin-bottom: 0;
+                                    padding: @indent__s @indent__xl @indent__s 0;
+                                    position: relative;
+    
+                                    .lib-icon-font(
+                                        @_icon-font-content: @icon-down,
+                                        @_icon-font-size: 18px,
+                                        @_icon-font-text-hide: false,
+                                        @_icon-font-position: after,
+                                        @_icon-font-display: block
+                                    );
+    
+                                    &:after {
+                                        position: absolute;
+                                        right: @indent__s;
+                                        top: 8px;
+                                    }
+    
+                                    &.active {
+                                        .lib-icon-font-symbol(
+                                            @_icon-font-content: @icon-up,
+                                            @_icon-font-position: after
+                                        );
+                                    }
+                               }
+                               .block-collapsible-nav-content{
+                                   display: none;
+                                   &.active{
+                                       display: block;
+                                   }
+                               }
+                           }
+                        }
+                        .page-title-wrapper{
+                            /* display: none; */ /* klaudio */
+                        }
+                        .column{
+                            &.main{
+                                width: 100%;
+                                padding-left: 0;
+                                .table-wrapper{
+                                    border-top: none;
+                                    padding-bottom: 10px;
+                                    .data{
+                                        &.table{
+                                            .flexbox();
+                                            td{
+                                                border: none;
+                                            }
+                                            thead{
+                                                margin-right: 10px;
+                                                tr{
+                                                    .flexbox();
+                                                    .flex-direction(column);
+                                                }
+                                            }
+                                            tbody{
+                                                tr{
+                                                    .flexbox();
+                                                    .flex-direction(column);
+                                                }
+                                            }
+                                            .actions{
+                                                padding-top: 15px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customer-account-index{
+        .page-main{
+            .columns{
+                .column{
+                    &.main{
+                        .block{
+                            .block-title{
+                                .flexbox();
+                                .flex-direction(column);
+                                .action{
+                                    margin-left: 0;
+                                    margin-bottom: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customer-address-index{
+        .page-main{
+            .columns{
+                .column{
+                    &.main{
+                        .block{
+                            .block-title{
+                                .flexbox();
+                                .flex-direction(column);
+                                .action{
+                                    margin-left: 0;
+                                    margin-bottom: 5px;
+                                }
+                            }
+                            /* .block-content{
+                                .box{
+                                    &.box-address-billing{
+                                        padding-bottom: 20px;
+                                        border-bottom: 1px solid;
+                                    }
+                                }
+                            } */
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .customer-address-index{
+        .page-main{
+            .columns{
+                .column{
+                    &.main{
+                        .block{
+                            &.block-addresses-list{
+                                .table{
+                                    thead{
+                                        margin-right: 0!important;
+                                    }
+                                    tbody{
+                                        tr{
+                                            td{
+                                                padding-left: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .customer-account-index{
+        .block-dashboard-orders{
+            .block-title{
+                margin-bottom: 0!important;
+            }
+            .table-wrapper{
+                &.orders-recent{
+                    table{
+                        thead{
+                            display: none;
+                        }
+                        tbody{
+                            width: 100%;
+                            .flexbox();
+                            .flex-wrap(wrap);
+                            tr{
+                                .flex-align-items(flex-start);
+                                padding-bottom: 15px;
+                                width: 50%;
+                                border-bottom: 1px solid @color-cloud;
+                                td[data-th]:before{
+                                    content: attr(data-th)!important;
+                                    font-weight: 700;
+                                    padding: 0!important;
+                                }
+                                .col{
+                                    text-align: left;
+                                    .flexbox()!important;
+                                    .flex-direction(column);
+                                    padding-bottom: 0!important;
+                                }
+                                &:nth-child(2){
+                                    .col{
+                                        padding-left: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customer-address-index{
+        .table-wrapper{
+            &.additional-addresses{
+                table{
+                    thead{
+                        display: none;
+                    }
+                    tbody{
+                        width: 100%;
+                        .flexbox();
+                        .flex-wrap(wrap);
+                        tr{
+                            .flex-align-items(flex-start);
+                            padding-bottom: 15px;
+                            width: 50%;
+                            border-bottom: 1px solid @color-cloud;
+                            td[data-th]:before{
+                                content: attr(data-th)!important;
+                                font-weight: 700;
+                                padding: 0!important;
+                            }
+                            .col{
+                                text-align: left;
+                                .flexbox()!important;
+                                .flex-direction(column);
+                                padding-bottom: 0!important;
+                            }
+                            &:nth-child(2){
+                                .col{
+                                    padding-left: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .customer-account-login{
+        .page-wrapper{
+            .page-main{
+                .columns{
+                    .column{
+                        &.main{
+                            .login-container{
+                                .block{
+                                    &.block-new-customer{
+                                        margin-top: 25px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customer-address-index{
+        .page-main{
+            .columns{
+                .column{
+                    &.main{
+                        .block{
+                            .block-content{
+                                .box{
+                                    &.box-address-billing{
+                                        padding-bottom: 20px;
+                                        border-bottom: 1px solid;
+                                    }
+                                }
+                            }
+                        }
+                        .table-wrapper{
+                            &.additional-addresses{
+                                table{
+                                    tbody{
+                                        tr{
+                                            width: 100%!important;
+                                            &:nth-child(2){
+                                                .col{
+                                                    padding-left: 10px!important;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customer-account-index{
+        .table-wrapper{
+            &.orders-recent{
+                table{
+                    tbody{
+                        tr{
+                            width: 100%!important;
+                            &:nth-child(2){
+                                .col{
+                                    padding-left: 10px!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

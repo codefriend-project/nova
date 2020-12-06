@@ -1,0 +1,104 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .mini-banner-container{
+        .flexbox();
+        .flex-wrap(wrap);
+        margin: 0;
+        .banner-content{
+            .flexbox();
+            .flex-direction(column);
+            .text-container{
+                margin:  10px 10px 0;
+                text-align: center;
+                font-weight: normal;
+            }
+            .image-container{
+                overflow: hidden;
+                img{
+                    transition: transform 0.7s; /* Animation */
+                }
+            }
+        }
+    }
+}
+
+
+//
+//  Desktop
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__mt) {
+    .mini-banner-container{
+        .banner-content{
+            width: 23%;
+            padding-left: 1%;
+            padding-right: 1%;
+            padding-bottom: 35px;
+            &:nth-child(4n){
+                padding-right: 0;
+            }
+            &:nth-child(4n + 1){
+                padding-left: 0;
+            }
+            .text-container{
+                span{
+                    .lib-font-size(24px);
+                }
+            }
+            .image-container{
+                &:hover{
+                    img{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__mt) {
+    .mini-banner-container{
+        .flex-wrap(wrap);
+        .banner-content{
+            width: 49%;            
+            padding-bottom: 30px;
+            &:nth-child(2n){
+                padding-left: 1%;
+            }
+            &:nth-child(2n + 1){
+                padding-right: 1%;
+            }
+            .text-container{
+                span{
+                    .lib-font-size(20);
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile Small
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .mini-banner-container{
+        .flex-wrap(wrap);
+        .banner-content{
+            width: 100%!important;
+            padding-bottom: 40px;
+            padding-left: 0;
+            padding-right: 0;
+            margin: auto;
+        }
+    }
+}

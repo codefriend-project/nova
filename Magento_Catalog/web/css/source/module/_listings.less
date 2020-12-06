@@ -1,0 +1,90 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+@product-name-link__color: @text__color;
+@product-name-link__color__active: @text__color;
+@product-name-link__color__hover: @text__color;
+@product-name-link__color__visited: @text__color;
+
+@product-name-link__text-decoration: none;
+@product-name-link__text-decoration__active: @link__hover__text-decoration;
+@product-name-link__text-decoration__hover: @link__hover__text-decoration;
+@product-name-link__text-decoration__visited: @link__hover__text-decoration;
+
+@product-item__hover__background-color: @color-white;
+@product-item__hover__box-shadow: 3px 4px 4px 0 rgba(0, 0, 0, .3);
+
+@product-price__muted__color: @color-gray40;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .catalog-category-view{
+        .page-main{
+            .products-grid{
+                .product-items{
+                    .flexbox();
+                    .flex-wrap(wrap);
+                    .flex-justify(flex-start);
+                    .product-item{
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__mt) {
+    .catalog-category-view{
+        .page-main{
+            .products-grid{
+                .product-items{
+                    .product-item{
+                        width: 24%;
+                        /* max-width: 330px; */
+                        margin-bottom: 40px;
+                        margin-right: auto;
+                        &:nth-child(4n){
+                            margin-right: 0;
+                        }
+                        .product-item-photo{
+                            .flexbox();
+                            .product-image-container{
+                                .product-image-wrapper{
+                                    padding-bottom: 0!important;
+                                    .flexbox();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__mt) {
+    .catalog-category-view{
+        .page-main{
+            .products-grid{
+                .product-items{
+                    .product-item{
+                        margin: 0 auto 40px;
+                        /* &:nth-child(2n){
+                            margin-right: 0;
+                        } */
+                    }
+                }
+            }
+        }
+    }
+}

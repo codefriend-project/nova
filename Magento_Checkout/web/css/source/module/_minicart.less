@@ -1,0 +1,334 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+@minicart__border-color: @color-gray80;
+@minicart__padding-horizontal: @indent__base;
+
+@minicart-qty__height: 24px;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    //
+    //  Minicart
+    //  ---------------------------------------------
+
+    .block-minicart {
+        display: none;
+        box-shadow: 0px 0px 5px 0px @color-cloud;
+        .action {
+            &.edit,
+            &.delete {
+                .lib-icon-font(
+                    @icon-edit,
+                    @_icon-font-size: 18px,
+                    @_icon-font-line-height: 20px,
+                    @_icon-font-text-hide: true,
+                    @_icon-font-color: @minicart-icons-color,
+                    @_icon-font-color-hover: @primary__color,
+                    @_icon-font-color-active: @minicart-icons-color
+                );
+            }
+
+            &.delete {
+                .lib-icon-font-symbol(
+                    @_icon-font-content: @icon-trash
+                );
+            }
+        }
+    }
+    .minicart-wrapper{
+        margin-left: 20px;
+        .action {
+            &.showcart{
+                &:before{
+                    content: @icon-cart;
+                    font-size: 22px;
+                    line-height: 28px;
+                    color: @color-cloud;
+                    font-family: 'luma-icons';
+                }
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+            &.close {
+                height: 30px;
+                position: absolute;
+                right: 0;
+                top: -25px;
+                width: 25px;
+                .lib-button-reset();
+                .lib-button-icon(
+                    @icon-remove,
+                    @_icon-font-color: @minicart-icons-color,
+                    @_icon-font-size: 14px,
+                    @_icon-font-line-height: 14px,
+                    @_icon-font-text-hide: true
+                );
+                &:hover{
+                    &:before{
+                        color: @color-cloud;
+                    }
+                }
+            }
+
+            &.showcart {
+                white-space: nowrap;
+
+                .text {
+                    &:extend(.abs-visually-hidden all);
+                }
+
+                .counter.qty {
+                    background: none;
+                    .lib-css(color, @page__background-color);
+                    .lib-css(height, @minicart-qty__height);
+                    .lib-css(line-height, @minicart-qty__height);
+                    border-radius: 2px;
+                    display: inline-block;
+                    margin: 0;
+                    min-width: 18px;
+                    overflow: hidden;
+                    padding: 0 3px;
+                    text-align: center;
+                    white-space: normal;
+
+                    .loader {
+                        > img {
+                            .lib-css(max-width, @minicart-qty__height);
+                        }
+                    }
+                }
+
+                .counter-number {
+                    color: @color-cloud;
+                }
+
+                .counter-label {
+                    &:extend(.abs-visually-hidden all);
+                }
+            }
+        }
+        .block{
+            &.block-minicart{
+                position: fixed;
+                left: 0;
+                width: 100%;
+                background-color: @white;
+                margin: 0;
+                .block-title{
+                    .lib-font-size(20);
+                }
+                .subtitle{
+                    display: none;
+                    &.empty {
+                        .flexbox();
+                        .flex-justify(center);
+                        padding: 25px 0;
+                        font-weight: normal; 
+                    }
+                }
+                .action {
+                    &.showcart {
+                        white-space: nowrap;
+        
+                        .text {
+                            &:extend(.abs-visually-hidden all);
+                        }
+        
+                        .counter.qty {
+                            .lib-css(background, @active__color);
+                            .lib-css(color, @page__background-color);
+                            .lib-css(height, @minicart-qty__height);
+                            .lib-css(line-height, @minicart-qty__height);
+                            border-radius: 2px;
+                            display: inline-block;
+                            margin: 3px 0 0;
+                            min-width: 18px;
+                            overflow: hidden;
+                            padding: 0 3px;
+                            text-align: center;
+                            white-space: normal;
+        
+                            &.empty {
+                                display: none;
+                            }
+        
+                            .loader {
+                                > img {
+                                    .lib-css(max-width, @minicart-qty__height);
+                                }
+                            }
+                        }
+        
+                        .counter-number {
+                            text-shadow: 0 0 7px rgba(0, 0, 0, 1);
+                        }
+        
+                        .counter-label {
+                            &:extend(.abs-visually-hidden all);
+                        }
+                    }
+                }
+        
+                .minicart-widgets {
+                    margin-top: 15px;
+                }
+                #minicart-content-wrapper{
+                    .flexbox();
+                    .flex-direction(column);
+                    border: 1px solid @color-cloud;
+                    border-top: none;
+                    .block-title{
+                        margin-top: 15px;
+                        text-align: center;
+                    }
+                    .block-content{
+                        .flexbox();
+                        .flex-direction(column);
+                        position: relative;
+                        .minicart-items-wrapper{
+                            height: auto !important;
+                            padding: 40px 40px 20px 40px;
+                            .minicart-items{
+                                .flexbox();
+                                .flex-wrap(wrap);
+                                .flex-justify(flex-start);
+                                height: 100%;
+                                margin: 0;
+                                list-style: none;
+                                padding: 0;
+                                max-height: 200px;
+                                overflow-y: auto;
+                                .product-item{
+                                    width: calc((100%/3));
+                                    padding-bottom: 30px;
+                                    margin-bottom: 0;
+                                    .product{
+                                        .flexbox();
+                                        > a{
+                                            &.product-item-photo{
+                                                margin-right: 15px;
+                                                .flexbox();
+                                                .flex-align-items(center);
+                                                .product-image-photo{
+                                                    .flexbox();
+                                                    padding: 0;
+                                                }
+                                            }
+                                        }
+                                        .product-item-details{
+                                            .flexbox();
+                                            .flex-direction(column);
+                                            .product-item-name{
+                                                font-weight: normal;
+                                            }
+                                            .product-item-pricing{
+                                                margin-top: auto;
+                                                .price-container{
+                                                    margin: 8px 0;
+                                                    .flexbox();
+                                                    .price-wrapper{
+                                                        .price-excluding-tax{
+                                                            .lib-font-size(14);
+                                                        }
+                                                    }
+                                                    .minicart-price{
+                                                        .price{
+                                                            font-weight: normal;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            .product{
+                                                &.actions{
+                                                    .flexbox();
+                                                    margin-top: auto;
+                                                    .primary,
+                                                    .secondary{
+                                                        a{
+                                                            &:before{
+                                                                color: @color-cloud;
+                                                            }
+                                                        }
+                                                    }
+                                                    .primary{
+                                                        margin-right: 15px;
+                                                    }
+                                                }
+                                            }
+                                            .details-qty{
+                                                .flexbox();
+                                                .flex-align-items(center);
+                                                margin: 8px auto;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .wrapper-actions{
+                            margin: 10px auto 20px;
+                            .paypal-logo{
+                                display: none;
+                            }
+                            .subtotal{
+                                .flexbox();
+                                .flex-justify(center);
+                                margin-bottom: 8px;
+                                .label{
+                                    margin-right: 5px;
+                                }
+                            }
+                            .items-total{
+                                display: none;
+                            }
+                            .actions{
+                                text-align: center;
+                                margin-bottom: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.active{
+            .block{
+                &.block-minicart{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__mt) {
+    .minicart-wrapper{
+        .block{
+            &.block-minicart{
+                display: none !important;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__mt) {
+}

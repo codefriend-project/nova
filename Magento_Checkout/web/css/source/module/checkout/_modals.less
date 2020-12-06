@@ -1,0 +1,149 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+@checkout-modal-popup__width: 800px;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .checkout-index-index {
+        .modal-popup {
+            .field-tooltip {
+                .field-tooltip-content {
+                    &:extend(.abs-checkout-tooltip-content-position-top all);
+                }
+            }
+
+            .fieldset {
+                .field {
+                    .label {
+                        font-weight: @font-weight__regular;
+                    }
+                }
+            }
+
+            .modal-footer {
+                .action-hide-popup {
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .modal-popup{
+            &.agreements-modal{
+                .modal-inner-wrap{
+                    .modal-header{
+                        padding: 0;
+                        .flexbox();
+                        .flex-justify(flex-end);
+                        .action-close{
+                            position: relative;
+                            min-width: 100px;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+                    }
+                    .modal-footer{
+                        padding-bottom: 2rem;
+                        padding-top: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .checkout-index-index {
+        .modal-popup {
+            .modal-footer {
+                .action-save-address {
+                    width: 100%;
+                }
+
+                .action-hide-popup {
+                    margin-top: @indent__base;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .checkout-index-index {
+        .modal-popup {
+            .form-shipping-address {
+                .lib-css(max-width, @checkout-shipping-address__max-width);
+            }
+
+            .modal-footer {
+                .action-save-address {
+                    float: right;
+                    margin: 0 0 0 @indent__base;
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .checkout-index-index {
+        .modal-popup {
+            .modal-inner-wrap {
+                /* .lib-css(margin-left, -(@checkout-modal-popup__width/2));
+                .lib-css(width, @checkout-modal-popup__width);
+                left: 50%; */
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .checkout-index-index {
+        .modal-popup {
+            left: 0;
+            .modal-inner-wrap{
+                width: 100%;
+                background-color: @white!important;
+                .fieldset{
+                    .field{
+                        .control{
+                            &._with-tooltip{
+                                .input-text{
+                                    margin-right: 0;
+                                    width: 100%; 
+                                }
+                                .field-tooltip{
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .modal-footer{
+                    .action{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

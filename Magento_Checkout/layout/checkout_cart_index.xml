@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="cart.discount" remove="true"/>
+        <!-- <referenceBlock name="checkout.cart.shipping">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="block-summary" xsi:type="array">
+                            <item name="config" xsi:type="array">
+                                <item name="componentDisabled" xsi:type="boolean">true</item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock> -->
+        <referenceContainer name="cart.summary">
+            <container name="cart.summary.info.container" as="cartSummaryInfo" label="Cart Summary Info" htmlTag="div" htmlClass="checkout-summary-info" after="-">
+                <block class="Magento\Cms\Block\Block" name="checkout_summary_info">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">checkout_summary_info</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

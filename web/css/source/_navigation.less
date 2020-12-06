@@ -1,0 +1,101 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .page-header{
+        .header{
+            &.content{
+                .flexbox();
+                .logo{
+                    margin: 0;
+                    padding: 0;
+                }
+                .navigation{
+                    .navigation__list{
+                        li{
+                            &.navigation__item{
+                                a{
+                                    color: @color-cloud;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .page-header{
+        .header{
+            &.content{
+                .navigation{
+                    width: 80%;
+                    margin: auto;
+                    .navigation__list{
+                        .flexbox();
+                        .flex-justify(center);
+                        margin: 0;
+                        padding: 0;
+                        li{
+                            &.navigation__item{
+                                margin: 0 25px 0 0;
+                                &:last-child{
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .page-header{
+        .header{
+            &.content{
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-header{
+        .header{
+            &.content{
+                .navigation{
+                    .main_menu{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .page-header{
+        .header{
+            &.content{
+                
+            }
+        }
+    }
+}

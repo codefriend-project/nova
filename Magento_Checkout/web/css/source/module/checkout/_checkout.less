@@ -1,0 +1,273 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+/* @import 'fields/_file-uploader.less';
+ */
+@checkout-wrapper__margin: @indent__base;
+@checkout-wrapper__columns: 16;
+
+@checkout-step-title__border: @border-width__base solid @color-gray80;
+@checkout-step-title__font-size: 26px;
+@checkout-step-title__font-weight: @font-weight__light;
+@checkout-step-title__padding: @indent__s;
+
+@checkout-step-title-mobile__font-size: 18px;
+
+@checkout-step-content-mobile__background: @color-gray-light01;
+@checkout-step-content-mobile__margin-s: 15px;
+@checkout-step-content-mobile__margin: @indent__base -(@checkout-step-content-mobile__margin-s) @checkout-step-content-mobile__margin-s;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    .checkout-index-index {
+        .page-title-wrapper {
+            &:extend(.abs-visually-hidden all);
+        }
+    }
+
+    .checkout-container {
+        &:extend(.abs-add-clearfix all);
+        .lib-css(margin, 0 0 @checkout-wrapper__margin);
+    }
+
+    .opc-wrapper {
+        .lib-css(margin, 0 0 @checkout-wrapper__margin);
+
+        .opc {
+            &:extend(.abs-reset-list all);
+        }
+
+        .step-title {
+            &:extend(.abs-checkout-title all);
+            .lib-css(border-bottom, @checkout-step-title__border);
+            margin-bottom: 15px;
+        }
+
+        .step-content {
+            margin: 0 0 @indent__xl;
+        }
+    }
+
+    .checkout-index-index {
+        .nav-sections,
+        .nav-toggle {
+            display: none;
+        }
+        .logo {
+            margin-left: 0;
+        }
+        .opc-wrapper{
+            #checkoutSteps{
+                #opc-shipping_method{
+                    #shipping-method-buttons-container{
+                        .action{
+                            &.continue{
+                                &.primary{
+                                    padding: 8px 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .opc-block-shipping-information{
+            .shipping-information-title{
+                .action-edit{
+                    top: 0;
+                    text-align: right;
+                }
+            }
+        }
+        #opc-sidebar{
+            .opc-block-summary{
+                .block{
+                    &.items-in-cart{
+                        margin-bottom: 30px;
+                        .minicart-items-wrapper{
+                            .minicart-items{
+                                max-height: 350px;
+                                overflow: auto;
+                                padding-right: 15px;
+                            }
+                        }
+                    }
+                    &.checkout-summary-info{
+                        margin-top: 25px;
+                        .flexbox();
+                        .flex-direction(column);
+                        .title{
+                            .lib-font-size(16);
+                            font-weight: bold;
+                            margin: 0 0 10px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .checkout-onepage-success {
+        &:extend(.abs-add-clearfix all);
+        .page-wrapper{
+            #maincontent{
+                text-align: center;
+                .checkout-success{
+                    margin-top: 30px;
+                    .actions-toolbar{
+                        .flexbox();
+                        .flex-justify(center);
+                    }
+                }
+            }
+        }
+        .print {
+            display: none;
+        }
+    }
+
+    .abs-discount-code {
+        .form-discount {
+            display: table;
+            width: 100%;
+
+            .actions-toolbar {
+                display: table-cell;
+                vertical-align: top;
+                width: 1%;
+
+                .primary {
+                    float: left;
+                    .action {
+                        &:extend(.abs-revert-to-action-secondary all);
+                        border-bottom-left-radius: 0;
+                        border-top-left-radius: 0;
+                        margin: 0 0 0 -2px;
+                        white-space: nowrap;
+                        width: auto;
+                    }
+                }
+            }
+
+            > .field {
+                > .label {
+                    display: none; 
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .opc-wrapper {
+        .step-title {
+            .lib-css(font-size, @checkout-step-title-mobile__font-size);
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-content {
+            .lib-css(margin, 0 0 @checkout-step-content-mobile__margin-s);
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .opc-wrapper {
+        &:extend(.abs-add-box-sizing-desktop-m all);
+        .lib-layout-column(2, 1, @checkout-wrapper__columns);
+        padding-right: 0;
+        width: 60%;
+    }
+
+    .opc-summary-wrapper{
+        width: 38%;
+    }
+
+    .checkout-onepage-success {
+        .print {
+            display: block;
+            float: right;
+            margin: 23px 0 0;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .checkout-index-index{
+        #checkout{
+            .opc-estimated-wrapper{
+                margin: 15px 0;
+                .estimated-block{
+                    .estimated-label{
+                        .lib-font-size(18);
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                    }
+                }
+                .minicart-wrapper{
+                    .flexbox();
+                    .action{
+                        &.showcart{
+                            margin-left: auto;
+                            .flexbox();
+                            .flex-justify(flex-end);
+                        }
+                    }
+                }
+            }
+            .opc-summary-wrapper{
+                margin: 10px 0 20px;
+                width: 100%;
+                .flex-order(2);
+                left: 0;
+                height: 100%;
+                margin-top: 0;
+                .action-close{
+                    min-width: 50px;
+                }
+                #opc-sidebar{
+                    .opc-block-shipping-information{
+                        margin: 0 0 20px;
+                        padding: 22px 30px;
+                    }
+                }
+            }
+            .opc-progress-bar{
+                .flex-order(1);
+            }
+            .opc-wrapper{
+                .flex-order(3);
+                #checkout-step-shipping_method{
+                    .actions-toolbar{
+                        margin-top: 20px;
+                        .primary{
+                            width: 100%;
+                            .action{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,370 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    [class*='sales-order-'],
+    [class*='sales-guest-']{
+        .page-title-wrapper{
+            .flexbox();
+            .flex-wrap(wrap);
+            .actions-toolbar{
+                width: 100%;
+                .flexbox();
+                .actions{
+                    a{
+                        &:hover,
+                        &:active{
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+        .items{
+            &.order-links{
+                .flexbox();
+                border-bottom: 1px solid @color-cloud;
+                li{
+                    &.nav{
+                        &.item{
+                            margin: 0;
+                            padding: 8px 12px;
+                            a{
+                                color: @color-cloud;
+                                &:hover{
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .order-details-items{
+            border-bottom: 1px solid @color-cloud;
+            .secondary{
+                .action{
+                    &.back{
+                        .lib-font-size(14);
+                        border-radius: 0!important;
+                        padding: 8px 12px;
+                        min-width: 200px;
+                        min-height: 38px;
+                        background-image: none;
+                        background: @color-cloud;
+                        text-transform: capitalize;
+                        cursor: pointer;
+                        display: inline-block;
+                        font-weight: normal;
+                        text-align: center;
+                        margin: 15px auto;
+                        .flexbox();
+                        .flex-justify(center);
+                        .flex-align-items(center);
+                        span{
+                            color: @white;
+                        }
+                        &:hover{
+                            text-decoration: none;
+                            background: @color-hover;
+                            border: 1px solid @color-hover;                            
+                        }
+                    }
+                }
+            }
+            .order-title{
+                display: none;
+            }
+            .actions-toolbar{
+                .flexbox();
+            }
+            .table-wrapper{
+                margin: 0;
+                .table{
+                    span, strong{
+                        font-weight: 400;
+                        .lib-font-size(14);
+                    }
+                    .col{
+                        font-weight: 400;
+                    }
+                    tbody{
+                        tr{
+                            .col{
+                                &.qty{
+                                    .items-qty{
+                                        list-style: none;
+                                        margin: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    tfoot{
+                        tr{
+                            td{
+                                text-align: right;
+                            }
+                            &.grand_total{
+                                th, td{
+                                    strong, span{
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .block{
+            &.block-order-details-view{
+                padding: 20px 0;
+                border-bottom: 1px solid @color-cloud;
+                .block-title{
+                    margin-bottom: 10px;
+                    strong{
+                        .lib-font-size(20);
+                        font-weight: 400;
+                    }
+                }
+                .block-content{
+                    .flexbox();
+                    .box{
+                        margin: 0 auto;
+                        .box-title{
+                            margin: 0;
+                            span{
+                                .lib-font-size(16);
+                            }
+                        }
+                        .box-content{
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    [class*='sales-order-'],
+    [class*='sales-guest-']{
+        .page-title-wrapper{
+            margin: 20px 0 25px 0;
+            .page-title{
+                margin: 0;
+            }
+            .order-status{
+                margin-left: 10px;
+                .lib-font-size(16);
+                .flexbox();
+                .flex-align-items(center);
+            }
+            .actions-toolbar{
+                .flex-justify(flex-end);
+                margin: 10px auto;
+            }
+            .order-date{
+                margin-left: auto;
+                .flexbox();
+                .flex-align-items(center);
+            }
+        }
+        .items{
+            &.order-links{
+                margin-top: 15px;
+                li{
+                    &.nav{
+                        border-left: 1px solid #000;
+                        border-top: 1px solid #000;
+                        border-bottom: 0;
+                        &:last-child{
+                            border-right: 1px solid #000;
+                        }
+                    }
+                }
+            }
+        }
+        .order-details-items{
+            margin: 20px auto;
+            .actions-toolbar{
+                .flex-justify(flex-end);
+            }
+            .table-wrapper{
+                .table{
+                    thead,
+                    tbody{
+                        .col{
+                            &.price,
+                            &.qty,
+                            &.subtotal{
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .block{
+            &.block-order-details-view{
+                .block-content{
+                    .box{
+                        width: 25%!important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    [class*='sales-order-'],
+    [class*='sales-guest-']{
+        .page-title-wrapper{
+            .flex-direction(column);
+            .flex-justify(center);
+            .page-title{
+                margin: 0 auto;
+            }
+            .order-status{
+                margin: 5px auto;
+            }
+            .actions-toolbar{
+                .flex-justify(center);
+                margin-top: 5px;
+            }
+            .order-date{
+                text-align: center;
+            }
+        }
+        .items{
+            &.order-links{
+                .flex-direction(column);
+                text-align: center;
+                li{
+                    &.nav{
+                        &.item{
+                            border: 1px solid @color-cloud;
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+        }
+        .order-details-items{
+            margin: 20px auto;
+            .actions-toolbar{
+                .flex-justify(center);
+                .secondary{
+                    width: 100%;
+                }
+            }
+            .table-order-items{
+                border-top: 1px solid @color-cloud;
+                .flex-direction(row);
+                .flex-wrap(wrap);
+                thead{
+                    display: none;
+                }
+                tbody{
+                    width: 100%;
+                    margin: 0!important;
+                    .col{
+                        border-bottom: none!important;
+                    }
+                    tr{
+                        td{
+                            text-align: center!important;
+                            ul{
+                                padding: 0;
+                            }
+                            &.sku{
+                                .flexbox()!important;
+                                .flex-direction(column);
+                            }
+                        }
+                        td[data-th]:before{
+                            content: attr(data-th)!important;
+                            font-weight: 700;
+                        }
+                    }
+                }
+                tfoot{
+                    .flexbox();
+                    .flex-direction(column);
+                    width: 100%;
+                    margin-top: 10px;
+                    tr{
+                        width: 100%;
+                        .flexbox();
+                        th,
+                        td{
+                            width: 50%;
+                        }
+                        th{
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+        .block{
+            &.block-order-details-view{
+                .block-title{
+                    text-align: center;
+                }
+                .block-content{
+                    text-align: center;
+                    .flex-direction(column);
+                    .box{
+                        .box-content{
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sales-order-history,
+    .sales-guest-history{
+        .table-wrapper{
+            &.orders-history{
+                table{
+                    thead{
+                        display: none;
+                    }
+                    tbody{
+                        width: 100%;
+                        tr{
+                            .flex-align-items(flex-start);
+                            padding-bottom: 15px;
+                            border-bottom: 1px solid @color-cloud;
+                            td[data-th]:before{
+                                content: attr(data-th)!important;
+                                font-weight: 700;
+                                padding: 0!important;
+                            }
+                            .col{
+                                .flexbox()!important;
+                                .flex-direction(column);
+                                text-align: left;
+                                padding-bottom: 0!important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,155 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .page-header{
+        margin: 0;
+        position: fixed;
+        width: 100%;
+        background: @white;
+        z-index: 9;
+        border-bottom: 1px solid #575a5e!important;
+        .header{
+            &.content{
+                .top-links{
+                    .authorization-link{
+                        list-style: none;
+                    }
+                }
+                .header-content-right{
+                    .panel{
+                        &.wrapper{
+                            .panel{
+                                &.header{
+                                    .header{
+                                        &.links{
+                                            li{
+                                                a , span{
+                                                    color: @color-cloud;
+                                                }
+                                            }
+                                            .customer-welcome{
+                                                .header{
+                                                    &.links{
+                                                        .flexbox();
+                                                        .flex-direction(column);
+                                                        margin: 8px;
+                                                        background: @color-cloud;
+                                                        li{
+                                                            padding: 8px;
+                                                            a{
+                                                                padding: 0;
+                                                                color: @white;
+                                                            }
+                                                            &:hover{
+                                                                background: @color-cloud;
+                                                                a{
+                                                                    padding: 0;
+                                                                    border-bottom: 1px solid;
+                                                                    width: fit-content;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .page-header{
+        .header{
+            &.content{
+                padding: 30px 20px 20px;
+                .logo{
+                    max-width: 230px;
+                    .flexbox();
+                    .flex-align-items(center);
+                }
+                .top-links{
+                    .flexbox();
+                    .flex-justify(center);
+                    .flex-align-items(center);
+                    .minicart-wrapper{
+                        margin: 0 15px;
+                    }
+                }
+                .header-content-right{
+                    .flexbox();
+                    .flex-align-items(center);
+                    .panel{
+                        &.wrapper{
+                            background: @white;
+                            border: none;
+                            .panel{
+                                &.header{
+                                    padding: 0;
+                                    height: 100%;
+                                    .header{
+                                        &.links{
+                                            .flexbox();
+                                            li{
+                                                white-space: nowrap;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__mt) {
+    .page-header{
+        .header{
+            &.content{
+                .nav-toggle{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-header{
+        .header{
+            &.content{
+                .logo{
+                    max-width: 120px;
+                }
+            }
+        }
+    }
+}

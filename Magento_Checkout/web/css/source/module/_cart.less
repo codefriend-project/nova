@@ -1,0 +1,466 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+@mobile-cart-padding: 15px;
+@cart-price-color: @color-gray40;
+@cart-item-cell-padding-top: 20px;
+
+//
+//  Common
+//
+
+& when (@media-common = true) {
+    .checkout-cart-index{
+        .page-wrapper{
+            .columns{
+                .cart-container{
+                    .flexbox();
+                    .form-cart{
+                        .cart{
+                            &.table-wrapper{
+                                margin-bottom: 40px;
+                                border-bottom: 1px solid @color-cloud;
+                                #shopping-cart-table{
+                                    .flexbox();
+                                    .flex-direction(column);
+                                    thead{
+                                        border-bottom: 1px solid #ccc;
+                                        .col{
+                                            &.price{
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                    tbody{
+                                        &.cart{
+                                            &.item{
+                                                .flexbox();
+                                                .flex-direction(column);
+                                                padding: 15px 0;
+                                                > tr{
+                                                    > td{
+                                                        border: none;
+                                                    }
+                                                }
+                                                .item-info{
+                                                    .flexbox();
+                                                    .flex-align-items(center);
+                                                    .col{
+                                                        &.item{
+                                                            .flexbox();
+                                                            .flex-align-items(center);
+                                                            .price{
+                                                                font-weight: normal;
+                                                                .lib-font-size(14);
+                                                            }
+                                                        }
+                                                        &.price{
+                                                            .price-excluding-tax{
+                                                                .cart-price{
+                                                                    .flexbox();
+                                                                    .flex-align-items(center);
+                                                                    .price{
+                                                                        font-weight: normal;
+                                                                        .lib-font-size(14);
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        &.qty{
+                                                            .label{
+                                                                display: none;
+                                                            }
+                                                        }
+                                                        &.subtotal{
+                                                            text-align: right;
+                                                            .cart-price{
+                                                                .flexbox();
+                                                                .price{
+                                                                    .lib-font-size(14);
+                                                                    /* font-weight: normal; */
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .item-actions{
+                                            td{
+                                                width: 100%;
+                                                padding: 0;
+                                                .flexbox();
+                                                .actions-toolbar{
+                                                    width: 100%;
+                                                    .flexbox();
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.main{
+                                &.actions{
+                                    .flexbox();
+                                    .action{
+                                        &.continue{
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .cart-summary{
+                        height: 100%;
+                        background-color: @base-background-color;
+                        .summary{
+                            &.title{
+                                .lib-font-size(18);
+                                font-weight: normal;
+                            }
+                        }
+                        #block-shipping{
+                            display: none;
+                        }
+                        #cart-totals{
+                            margin-top: 20px;
+                        }
+                        #cart-totals{
+                            .table-wrapper{
+                                tbody{
+                                    .totals.sub , .totals-tax{
+                                        th{
+                                            font-weight: normal;
+                                        }
+                                    }
+                                    .grand{
+                                        &.totals{
+                                            th{
+                                                strong{
+                                                    .lib-font-size(16);
+                                                }
+                                            }
+                                            .price{
+                                                font-weight: bold;
+                                                .lib-font-size(16);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .checkout-methods-items{
+                            .item{
+                                .action{
+                                    &.primary{
+                                        &.checkout{
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .checkout-summary-info{
+                            margin-top: 25px;
+                            .flexbox();
+                            .flex-direction(column);
+                            .title{
+                                .lib-font-size(16);
+                                font-weight: bold;
+                                margin: 0 0 10px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .checkout-cart-index{
+        .page-wrapper{
+            .columns{
+                .cart-container{
+                    .flex-direction(row-reverse);
+                    .form-cart{
+                        width: 70%;
+                        margin-right: 50px;
+                        .cart{
+                            &.table-wrapper{
+                                #shopping-cart-table{
+                                    thead{
+                                        > tr{
+                                            .flexbox();
+                                            /* .flex-justify(); */
+                                            .col{
+                                                &.item{
+                                                    width: 70%;
+                                                }
+                                                &.qty{
+                                                    text-align: center;
+                                                    width: 15%;
+                                                }
+                                                &.subtotal{
+                                                    text-align: right;
+                                                    width: 15%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    tbody{
+                                        &.cart{
+                                            &.item{
+                                                .item-info{
+                                                    .col{
+                                                        &.item{
+                                                            width: 70%;
+                                                            .product-item-photo{
+                                                                margin-right: 10px;
+                                                            }
+                                                        }
+                                                        &.qty{
+                                                            width: 15%;
+                                                        }
+                                                        &.subtotal{
+                                                            width: 15%;
+                                                            .cart-price{
+                                                                .flex-justify(flex-end);
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .item-actions{
+                                            .actions-toolbar{
+                                                .flex-justify(flex-end);
+                                                .action-edit{
+                                                    margin-right: 10px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.main{
+                                &.actions{
+                                    .flex-justify(flex-end);
+                                    .action{
+                                        &.clear{
+                                            margin-right: 25px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .cart-summary{
+                        width: 30%;
+                        padding: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .checkout-cart-index{
+        .page-wrapper{
+            .page-title-wrapper{
+                margin-bottom: 0!important;
+            }
+            .columns{
+                .cart-container{
+                    .flex-direction(column-reverse);
+                    .form-cart{
+                        .cart{
+                            &.table-wrapper{
+                                #shopping-cart-table{
+                                    thead{
+                                        display: none;
+                                    }
+                                    tbody{
+                                        &.cart{
+                                            &.item{
+                                                border-bottom: 1px solid #ccc;
+                                                .item-info{
+                                                    .col{
+                                                        text-align: center;
+                                                        &.item{
+                                                            margin-right: auto;
+                                                            .product-item-photo{
+                                                                margin-right: 10px;
+                                                            }
+                                                        }
+                                                        &.price{
+                                                            &:before{
+                                                                content: attr(data-th)!important;
+                                                                font-weight: 700;
+                                                            }
+                                                        }
+                                                        &.price{
+                                                            margin: auto;
+                                                        }
+                                                        &.qty{
+                                                            text-align: center;
+                                                            width: 100px;
+                                                            margin: auto;
+                                                            .field{
+                                                                &.qty{
+                                                                    height: 40px;
+                                                                }
+                                                            }
+                                                            &:before{
+                                                                content: attr(data-th)!important;
+                                                                font-weight: 700;
+                                                            }
+                                                        }
+                                                        &.subtotal{
+                                                            margin: auto;
+                                                            .cart-price{
+                                                                .flex-justify(center);
+                                                            }
+                                                            &:before{
+                                                                content: attr(data-th)!important;
+                                                                font-weight: 700;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                .item-actions{
+                                                    td{
+                                                        .actions-toolbar{
+                                                            .flex-justify(center);
+                                                            .action-edit{
+                                                                margin-right: 20px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.main{
+                                &.actions{
+                                    .flex-direction(column);
+                                    .action{
+                                        &.clear{
+                                            margin-bottom: 20px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .cart-summary{
+                        padding: 15px;
+                        margin: 50px 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .checkout-cart-index{
+        .page-wrapper{
+            .columns{
+                .cart-container{
+                    .form-cart{
+                        .cart{
+                            &.table-wrapper{
+                                #shopping-cart-table{
+                                    tbody{
+                                        &.cart{
+                                            &.item{
+                                                .item-info{
+                                                    .flex-wrap(wrap);
+                                                    .col{
+                                                        &.item{
+                                                            .flex-wrap(wrap);
+                                                            width: 100%;
+                                                            .flex-justify(center);
+                                                            .flex-direction(column);
+                                                            .product-item-details{
+                                                                margin: 20px auto 0px;
+                                                            }
+                                                        }
+                                                        &.qty{
+                                                            margin-left: auto;
+                                                        }
+                                                        &.subtotal{
+                                                            margin-right: auto;
+                                                        }
+                                                    }
+                                                }
+                                                .item-actions{
+                                                    margin-top: 10px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .checkout-cart-index{
+        .page-wrapper{
+            .columns{
+                .cart-container{
+                    .form-cart{
+                        .cart{
+                            &.table-wrapper{
+                                #shopping-cart-table{
+                                    tbody{
+                                        &.cart{
+                                            &.item{
+                                                .item-info{
+                                                    .flex-wrap(wrap);
+                                                    .col{
+                                                        &.item{
+                                                            .flexbox();
+                                                            .flex-align-items(center);
+                                                            .flex-direction(column);
+                                                            width: 100%;
+                                                            .product-item-photo{
+                                                                margin: 10px auto!important;
+                                                            }
+                                                            .product-item-name{
+                                                                margin-bottom: 10px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

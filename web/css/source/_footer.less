@@ -1,0 +1,103 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .page-footer{
+        margin: 0;
+        padding: 0!important;
+        background: @white!important;
+        border-top: 2px solid @color-cloud;
+        .footer{
+            &.content{
+                background: @white!important;
+                padding: 30px 20px;
+                .footer{
+                    &.links{
+                        .nav{
+                            &.item{
+                                a{
+                                    color: @color-cloud;
+                                    .lib-font-size(14);
+                                    &:hover{
+                                        color: @color-cloud;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .page-wrapper{
+        small{
+            &.copyright{
+                background-color: @color-cloud;
+                span{
+                    color: @white;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .page-footer{
+        .footer content{
+            
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .page-footer{
+        .footer content{
+            
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-footer{
+        .footer{
+            &.content{
+                border: 0;
+                .footer{
+                    &.links{
+                        .nav{
+                            &.item{
+                                margin: 0;
+                                padding: 0;
+                                background: #ffff;
+                                border: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .page-footer{
+        .footer content{
+            
+        }
+    }
+}

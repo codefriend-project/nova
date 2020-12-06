@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        
+        <move element="minicart" destination="header-content-right" after="-" />
+        <move element="navigation.sections" destination="header-wrapper" after="logo" />
+        <move element="header.panel.wrapper" destination="header-content-right" before="-" />
+        <move element="store.links" destination="header-content-right" before="-" />
+        
+        <referenceBlock name="sales-guest-form-link" remove="true"/>
+        <referenceBlock name="search-term-popular-link" remove="true"/>
+        <referenceBlock name="catalog-search-advanced-link" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/> 
+        <referenceBlock name="catalog.compare.link" remove="true"/>
+        <referenceBlock name="skip_to_content" remove="true" />
+        <referenceBlock name="store_language" remove="true" />
+        <referenceBlock name="navigation.sections" remove="true" />
+        <referenceBlock name="top.search" remove="true"/>
+        <referenceContainer name="breadcrumbs" remove="true" />
+
+
+        <!-- Compare Links Start -->
+        <referenceBlock name="catalog.compare.link" remove="true" />
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="catalogsearch.product.addto.compare" remove="true"/>
+        <referenceBlock name="category.product.addto.compare" remove="true"/>
+        <referenceBlock name="crosssell.product.addto.compare" remove="true" />
+        <referenceBlock name="related.product.addto.compare" remove="true" />
+        <referenceBlock name="upsell.product.addto.compare" remove="true" />
+        <referenceBlock name="view.addto.compare" remove="true" />
+        <!-- Compare Links End -->
+        
+        <referenceContainer name="header-wrapper">
+            <block class="Snowdog\Menu\Block\Menu" group="navigation-sections" name="menu_main">
+                <arguments>
+                    <argument name="menu" xsi:type="string">menu_main</argument>
+                </arguments>
+            </block>
+            <container name="header-content-right" htmlTag="div" htmlClass="header-content-right">
+                <!-- Force container to render -->
+                <block class="Magento\Framework\View\Element\Text" />
+            </container>
+        </referenceContainer>
+    </body>
+</page>

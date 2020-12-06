@@ -1,0 +1,69 @@
+.flexbox() {
+	display: -webkit-box; 
+	display: -moz-box; 
+	display:-webkit-flex;
+	display: -ms-flexbox;
+	display:flex;
+}
+
+.flex-justify(@justifyStyle) {
+	-ms-flex-justify:@justifyStyle;
+	-webkit-justify-content: @justifyStyle;
+	justify-content: @justifyStyle;
+}
+
+.flex-direction(@direction) {
+	-ms-flex-direction:@direction;
+	-webkit-flex-direction:@direction;
+	flex-direction:@direction;
+}
+
+.flex-align-items(@alignStyle) {
+	-ms-flex-align:@alignStyle;
+	-webkit-align-items:@alignStyle;
+	align-items: @alignStyle;   
+}
+
+.flex-align-self(@selfAlignStyle) {
+	-ms-flex-align-self:@selfAlignStyle;
+	-webkit-align-self:@selfAlignStyle;
+	align-self: @selfAlignStyle;
+}
+
+.flex-order(@order) {
+	-ms-flex-order:@order;
+	-webkit-order:@order;
+	order:@order; 
+}
+
+.flex-wrap(@wrap) {
+	-ms-flex-wrap:@wrap;
+	-webkit-flex-wrap:@wrap;
+	flex-wrap:@wrap; 
+}
+
+
+.custom-scrollbar(@width , @colorThumb, @colorTrack){  /* Kappa to review */
+	/* Let's get this party started */
+	::-webkit-scrollbar {
+		width: @width;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px  @colorTrack; 
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		background: @colorThumb;
+		-webkit-box-shadow: inset 0 0 6px @colorTrack; 
+	}
+	::-webkit-scrollbar-thumb:window-inactive {
+		background:  @colorTrack; 
+	}
+}

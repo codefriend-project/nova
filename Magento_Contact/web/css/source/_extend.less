@@ -1,0 +1,52 @@
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+*/
+
+& when (@media-common = true) {
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .contact-index-index{
+        .column{
+            &.main{
+                &:not(.sidebar-additional){
+                    #contact-form{
+                        min-width: 600px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//  Mobile
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .contact-index-index{
+        .column{
+            &.main{
+                &:not(.sidebar-additional){
+                    #contact-form{
+                        width: 100%;
+                        .actions-toolbar{
+                            width: 100%;
+                            .primary{
+                                width: 100%;
+                                .action{
+                                    width: 100%;
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

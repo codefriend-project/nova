@@ -1,0 +1,57 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+@import 'module/_listings.less';
+@import 'module/_toolbar.less';
+
+//
+//  Variables
+//  _____________________________________________
+
+@product-info-price: @color-gray34;
+@product-h1-margin-bottom-desktop: @indent__s + @indent__xs;
+@product-price__muted__color: @color-gray40;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .catalog-product-view{
+        .page-main{
+            .columns{
+                .column{
+                    &.main{
+                        margin-top: 20px;
+                        .flexbox();
+                        .flex-direction(row-reverse);
+                        .flex-wrap(wrap);
+                        .product-info-main{
+                            width: 40%;
+                        }
+                        .product{
+                            &.media{
+                                width: 60%;
+                                padding: 0 60px 0 0;
+                            }
+                            &.info{
+                                &.detailed{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+}
